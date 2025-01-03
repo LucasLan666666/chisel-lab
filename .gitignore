@@ -4,3 +4,4 @@ project
 target
 .bloop
 *.sv
+test_run_dir
