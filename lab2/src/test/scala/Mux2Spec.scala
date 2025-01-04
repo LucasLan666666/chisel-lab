@@ -13,7 +13,7 @@ class Mux2Spec extends AnyFlatSpec with ChiselScalatestTester {
             dut.io.sel.poke((sel == 1).B)
             dut.clock.step(1)
             val res = if (sel == 0) a else b
-            // println(a + " " + b + " " + sel + " " + res)
+            println(s"$a $b $sel $res")
             dut.io.y.expect((res ==1).B)
           }
         }
