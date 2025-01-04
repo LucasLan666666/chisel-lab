@@ -21,4 +21,3 @@ class HelloSpec extends AnyFlatSpec with ChiselScalatestTester {
     }
   }
 }
-

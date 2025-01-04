@@ -3,7 +3,7 @@
  *
  * Copyright: 2013, Technical University of Denmark, DTU Compute
  * Author: Martin Schoeberl (martin@jopdesign.com)
- * 
+ *
  */
 
 import chisel3._
@@ -13,7 +13,7 @@ class Hello extends Module {
     val led = Output(UInt(1.W))
   })
   val CNT_MAX = (100000000 / 2 - 1).U
-  
+
   val cntReg = RegInit(0.U(32.W))
   val blkReg = RegInit(0.U(1.W))
 
