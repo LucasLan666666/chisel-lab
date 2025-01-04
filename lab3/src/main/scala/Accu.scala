@@ -11,9 +11,20 @@ class Accu extends Module {
 
   // ***** your code starts here *****
 
-  res := 0.U // dummy code to make it compile
+  val accuReg = RegInit(0.U(8.W))
+  accuReg := accuReg + 1.U
+  when (io.setZero) {
+    accuReg := 0.U
+  }
+
+  res := accuReg
 
   // ***** your code ends here *****
 
   io.dout := res
+}
+
+// generate Verilog
+object Accu extends App {
+  emitVerilog(new Accu())
 }

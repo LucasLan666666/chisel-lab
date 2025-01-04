@@ -10,10 +10,19 @@ class Delay extends Module {
 
   // ***** your code starts here *****
 
-  // below is dummy code to make this example compile
-  res := io.din
+  val Reg1 = RegInit(0.U(8.W))
+  val Reg2 = RegInit(0.U(8.W))
+
+  Reg1 := io.din
+  Reg2 := Reg1
+
+  res := Reg2
 
   // ***** your code ends here *****
 
   io.dout := res
+}
+
+object Delay extends App {
+  emitVerilog(new Delay())
 }
