@@ -15,11 +15,14 @@ class Mux2 extends Module {
 
   // ***** your code starts here *****
 
-  res := b
+  res := Mux(sel, b, a)
 
   // ***** your code ends here *****
 
   io.y := res
 }
 
-
+// generate Verilog
+object Mux2 extends App {
+  emitVerilog(new Mux2())
+}
