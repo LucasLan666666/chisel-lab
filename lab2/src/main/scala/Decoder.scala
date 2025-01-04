@@ -18,12 +18,14 @@ class Decoder extends Module {
   //   is(2.U) { dec := "b0100".U }
   //   is(3.U) { dec := "b1000".U }
   // }
-  dec := MuxLookup(sel, 0.U(4.W)) (Seq(
-    0.U(2.W) -> "b0001".U(4.W),
-    1.U(2.W) -> "b0010".U(4.W),
-    2.U(2.W) -> "b0100".U(4.W),
-    3.U(2.W) -> "b1000".U(4.W)
-  ))
+  dec := MuxLookup(sel, 0.U(4.W)) (
+    Seq(
+      0.U(2.W) -> "b0001".U(4.W),
+      1.U(2.W) -> "b0010".U(4.W),
+      2.U(2.W) -> "b0100".U(4.W),
+      3.U(2.W) -> "b1000".U(4.W)
+    )
+  )
   // ***** your code ends here *****
 
   io.out := dec
